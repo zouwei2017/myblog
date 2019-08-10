@@ -1,0 +1,19 @@
+<tr class="article">
+  <td class="title">
+    <%= link_to article.title, article_path(article.id) %>
+  </td>
+  <td class="author">
+    <%= article.author %>
+  </td>
+  <td class="replies">
+    <%= article.replies %>
+  </td>
+  <td class="activity">
+    <%= article.updated_at %>
+  </td>
+  <td><%= link_to 'Edit', edit_article_path(article) %></td>
+  <td><%= link_to 'Destroy', article_path(article),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %></td>
+</tr>
+

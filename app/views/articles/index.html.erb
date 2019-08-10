@@ -1,0 +1,26 @@
+<div class="topics">
+
+  <table class="table">
+    <thead class="thead-default">
+    <tr class="article">
+      <th class="title"><%= t('activerecord.attributes.myblog/article.title')%></th>
+      <th class="author"><%= t('activerecord.attributes.myblog/article.author')%></th>
+      <th class="replies"><%= t('activerecord.attributes.myblog/article.replies')%></th>
+      <th class="activity"><%= t('activerecord.attributes.myblog/article.activity')%></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% if @articles.blank? %>
+      <tr>
+        <th>
+            <span class="text-mutted">
+              <%= t('myblog.article.empty') %>
+            </span>
+        </td>
+      </tr>
+    <% else %>
+      <%= render @articles %>
+    <% end %>
+    </tbody>
+  </table>
+</div>

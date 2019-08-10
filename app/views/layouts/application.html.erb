@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myblog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <nav class="navbar navbar-light bg-faded">
+    <div class="container">
+      <a class="navbar-brand" href="<%= main_app.root_path %>"><%= t('homeland.nav.home') %></a>
+      </ul>
+      <ul class="nav navbar-nav pull-xs-right">
+        <li class="nav-item<%= ' active' if controller_name == 'articles' and action_name == 'new' %>">
+          <a class="btn btn-primary-outline" href= "<%= new_article_path %>"><i class="fa fa-plus"></i> <%= t('homeland.nav.new') %></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="main-layout">
+    <div class="container">
+      <%#= notice_message %>
+
+      <%= yield %>
+    </div>
+  </div>
+  </body>
+</html>

@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_08_10_175101) do
 
-  create_table "articles", force: :cascade do |t|
+  create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.text "text"
     t.text "author"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_08_10_175101) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "comments", force: :cascade do |t|
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "commenter"
     t.text "body"
     t.integer "article_id"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_08_10_175101) do
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "username"
     t.string "password"
     t.boolean "is_admin", default: false

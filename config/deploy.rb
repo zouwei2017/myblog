@@ -2,6 +2,7 @@
 lock "~> 3.11.0"
 
 set :application, "myblog"
+set :use_sudo, true
 set :repo_url, "git@github.com:zouwei2017/myblog.git"
 set :deploy_to, '/home/weizou/Documents/blog'
 append :linked_files, "config/database.yml", "config/master.key"
